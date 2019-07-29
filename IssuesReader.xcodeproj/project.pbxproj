@@ -15,6 +15,7 @@
 		07345F7122EB214C0026D898 /* IssuesViewControllerTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 07345F7022EB214C0026D898 /* IssuesViewControllerTests.swift */; };
 		0752A4A722EF1E7200A7D5CD /* issues.csv in Resources */ = {isa = PBXBuildFile; fileRef = 0752A4A622EF1E7200A7D5CD /* issues.csv */; };
 		0752A4AA22EF219000A7D5CD /* Constants.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0752A4A922EF219000A7D5CD /* Constants.swift */; };
+		0752A4AE22EF3E7D00A7D5CD /* UserTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0752A4AD22EF3E7D00A7D5CD /* UserTableViewCell.swift */; };
 		07BFBD3D22EEEEFE0026106F /* User.swift in Sources */ = {isa = PBXBuildFile; fileRef = 07BFBD3C22EEEEFE0026106F /* User.swift */; };
 		07BFBD3F22EEF09B0026106F /* UserViewPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 07BFBD3E22EEF09B0026106F /* UserViewPresenter.swift */; };
 		07BFBD4122EEF0CD0026106F /* IssuesViewPresenterTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 07BFBD4022EEF0CD0026106F /* IssuesViewPresenterTests.swift */; };
@@ -57,6 +58,7 @@
 		07345F7722EB214C0026D898 /* IssuesReaderUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = IssuesReaderUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		0752A4A622EF1E7200A7D5CD /* issues.csv */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = issues.csv; sourceTree = "<group>"; };
 		0752A4A922EF219000A7D5CD /* Constants.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Constants.swift; sourceTree = "<group>"; };
+		0752A4AD22EF3E7D00A7D5CD /* UserTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserTableViewCell.swift; sourceTree = "<group>"; };
 		07BFBD3C22EEEEFE0026106F /* User.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = User.swift; sourceTree = "<group>"; };
 		07BFBD3E22EEF09B0026106F /* UserViewPresenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserViewPresenter.swift; sourceTree = "<group>"; };
 		07BFBD4022EEF0CD0026106F /* IssuesViewPresenterTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = IssuesViewPresenterTests.swift; sourceTree = "<group>"; };
@@ -205,6 +207,7 @@
 			isa = PBXGroup;
 			children = (
 				07BFBD3C22EEEEFE0026106F /* User.swift */,
+				0752A4AD22EF3E7D00A7D5CD /* UserTableViewCell.swift */,
 			);
 			path = Models;
 			sourceTree = "<group>";
@@ -460,6 +463,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				07345F5E22EB214A0026D898 /* UserViewController.swift in Sources */,
+				0752A4AE22EF3E7D00A7D5CD /* UserTableViewCell.swift in Sources */,
 				07345F5C22EB214A0026D898 /* AppDelegate.swift in Sources */,
 				07BFBD3D22EEEEFE0026106F /* User.swift in Sources */,
 				07BFBD4322EEF13F0026106F /* UserParser.swift in Sources */,

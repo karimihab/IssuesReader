@@ -11,7 +11,7 @@ import Foundation
 protocol UserViewPresenterProtocol {
 	var userService: UserServiceProtocol? { get }
 	var view: UserViewProtocol? { get }
-
+	
 	func getUsers()
 }
 
@@ -29,7 +29,6 @@ class userViewPresenter: UserViewPresenterProtocol {
 			print("userViewPresenter Error: Can't get Users")
 			return
 		}
-		
 		view?.loadUsers(users: usersData)
 	}
 }

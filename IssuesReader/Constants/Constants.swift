@@ -16,4 +16,6 @@ struct Constants {
 	static let surNameKey = "Sur name"
 	static let birthDateKey = "Date of birth"
 	static let issuesCountKey = "Issue count"
+	
+	static let userTableViewCellIdentifier = "userCell"
 }
