@@ -1,5 +1,5 @@
 //
-//  User.swift
+//  IssuesParserService.swift
 //  IssuesReader
 //
 //  Created by Karim Ihab on 29/07/2019.
@@ -8,9 +8,3 @@
 
 import Foundation
 
-struct User {
-	let firstName: String
-	let surName: String
-	let birthDate: Date
-	let issuesCount: Int
-}
