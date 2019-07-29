@@ -12,7 +12,7 @@ protocol UserServiceProtocol {
 	func getUsers() -> [User]?
 }
 
-class UserService {
+class UserService: UserServiceProtocol {
 	
 	let userParser:UserParserProtocol?
 	
