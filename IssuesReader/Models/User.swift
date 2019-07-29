@@ -11,6 +11,6 @@ import Foundation
 struct User {
 	let firstName: String
 	let surName: String
-	let birthDate: Date
-	let issuesCount: Int
+	let birthDate: String
+	let issuesCount: String
 }

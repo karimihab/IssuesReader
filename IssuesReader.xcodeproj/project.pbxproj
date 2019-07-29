@@ -14,12 +14,13 @@
 		07345F6622EB214C0026D898 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 07345F6422EB214C0026D898 /* LaunchScreen.storyboard */; };
 		07345F7122EB214C0026D898 /* IssuesViewControllerTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 07345F7022EB214C0026D898 /* IssuesViewControllerTests.swift */; };
 		0752A4A722EF1E7200A7D5CD /* issues.csv in Resources */ = {isa = PBXBuildFile; fileRef = 0752A4A622EF1E7200A7D5CD /* issues.csv */; };
+		0752A4AA22EF219000A7D5CD /* Constants.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0752A4A922EF219000A7D5CD /* Constants.swift */; };
 		07BFBD3D22EEEEFE0026106F /* User.swift in Sources */ = {isa = PBXBuildFile; fileRef = 07BFBD3C22EEEEFE0026106F /* User.swift */; };
 		07BFBD3F22EEF09B0026106F /* IssuesViewPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 07BFBD3E22EEF09B0026106F /* IssuesViewPresenter.swift */; };
 		07BFBD4122EEF0CD0026106F /* IssuesViewPresenterTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 07BFBD4022EEF0CD0026106F /* IssuesViewPresenterTests.swift */; };
-		07BFBD4322EEF13F0026106F /* IssuesParserService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 07BFBD4222EEF13F0026106F /* IssuesParserService.swift */; };
+		07BFBD4322EEF13F0026106F /* IssuesParser.swift in Sources */ = {isa = PBXBuildFile; fileRef = 07BFBD4222EEF13F0026106F /* IssuesParser.swift */; };
 		07BFBD4522EEF14B0026106F /* IssuesStorageService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 07BFBD4422EEF14B0026106F /* IssuesStorageService.swift */; };
-		07BFBD4722EEF1580026106F /* IssuesService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 07BFBD4622EEF1580026106F /* IssuesService.swift */; };
+		07BFBD4722EEF1580026106F /* UserService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 07BFBD4622EEF1580026106F /* UserService.swift */; };
 		0DF91262006DEAF35FE657B7 /* Pods_IssuesReaderTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 0DDE6ED45A531267EB633EC8 /* Pods_IssuesReaderTests.framework */; };
 		2C0793385312B3DE8B8051B9 /* Pods_IssuesReaderUITests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 7F0E0B9FF08F9EF38B74EBC1 /* Pods_IssuesReaderUITests.framework */; };
 		93A2986B73C9A8B1002AD4AA /* Pods_IssuesReader.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 7017E5D8CE6D4319A4F78CB3 /* Pods_IssuesReader.framework */; };
@@ -55,12 +56,13 @@
 		07345F7222EB214C0026D898 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		07345F7722EB214C0026D898 /* IssuesReaderUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = IssuesReaderUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		0752A4A622EF1E7200A7D5CD /* issues.csv */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = issues.csv; sourceTree = "<group>"; };
+		0752A4A922EF219000A7D5CD /* Constants.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Constants.swift; sourceTree = "<group>"; };
 		07BFBD3C22EEEEFE0026106F /* User.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = User.swift; sourceTree = "<group>"; };
 		07BFBD3E22EEF09B0026106F /* IssuesViewPresenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = IssuesViewPresenter.swift; sourceTree = "<group>"; };
 		07BFBD4022EEF0CD0026106F /* IssuesViewPresenterTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = IssuesViewPresenterTests.swift; sourceTree = "<group>"; };
-		07BFBD4222EEF13F0026106F /* IssuesParserService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = IssuesParserService.swift; sourceTree = "<group>"; };
+		07BFBD4222EEF13F0026106F /* IssuesParser.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = IssuesParser.swift; sourceTree = "<group>"; };
 		07BFBD4422EEF14B0026106F /* IssuesStorageService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = IssuesStorageService.swift; sourceTree = "<group>"; };
-		07BFBD4622EEF1580026106F /* IssuesService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = IssuesService.swift; sourceTree = "<group>"; };
+		07BFBD4622EEF1580026106F /* UserService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserService.swift; sourceTree = "<group>"; };
 		0DDE6ED45A531267EB633EC8 /* Pods_IssuesReaderTests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_IssuesReaderTests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		12A8054F4D5EA0251C2E7D5A /* Pods-IssuesReaderTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-IssuesReaderTests.release.xcconfig"; path = "Target Support Files/Pods-IssuesReaderTests/Pods-IssuesReaderTests.release.xcconfig"; sourceTree = "<group>"; };
 		14EF8F6315EBCCE039BFA748 /* Pods-IssuesReader.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-IssuesReader.release.xcconfig"; path = "Target Support Files/Pods-IssuesReader/Pods-IssuesReader.release.xcconfig"; sourceTree = "<group>"; };
@@ -124,6 +126,8 @@
 		07345F5A22EB214A0026D898 /* IssuesReader */ = {
 			isa = PBXGroup;
 			children = (
+				0752A4AC22EF278900A7D5CD /* Parser */,
+				0752A4A822EF218100A7D5CD /* Constants */,
 				07BFBD3422EEE63E0026106F /* ViewController */,
 				07BFBD3322EEE6300026106F /* Presenter */,
 				07BFBD3522EEE6460026106F /* Service */,
@@ -148,6 +152,22 @@
 			path = IssuesReaderTests;
 			sourceTree = "<group>";
 		};
+		0752A4A822EF218100A7D5CD /* Constants */ = {
+			isa = PBXGroup;
+			children = (
+				0752A4A922EF219000A7D5CD /* Constants.swift */,
+			);
+			path = Constants;
+			sourceTree = "<group>";
+		};
+		0752A4AC22EF278900A7D5CD /* Parser */ = {
+			isa = PBXGroup;
+			children = (
+				07BFBD4222EEF13F0026106F /* IssuesParser.swift */,
+			);
+			path = Parser;
+			sourceTree = "<group>";
+		};
 		07BFBD3322EEE6300026106F /* Presenter */ = {
 			isa = PBXGroup;
 			children = (
@@ -167,9 +187,8 @@
 		07BFBD3522EEE6460026106F /* Service */ = {
 			isa = PBXGroup;
 			children = (
-				07BFBD4222EEF13F0026106F /* IssuesParserService.swift */,
 				07BFBD4422EEF14B0026106F /* IssuesStorageService.swift */,
-				07BFBD4622EEF1580026106F /* IssuesService.swift */,
+				07BFBD4622EEF1580026106F /* UserService.swift */,
 			);
 			path = Service;
 			sourceTree = "<group>";
@@ -443,10 +462,11 @@
 				07345F5E22EB214A0026D898 /* IssuesViewController.swift in Sources */,
 				07345F5C22EB214A0026D898 /* AppDelegate.swift in Sources */,
 				07BFBD3D22EEEEFE0026106F /* User.swift in Sources */,
-				07BFBD4322EEF13F0026106F /* IssuesParserService.swift in Sources */,
-				07BFBD4722EEF1580026106F /* IssuesService.swift in Sources */,
+				07BFBD4322EEF13F0026106F /* IssuesParser.swift in Sources */,
+				07BFBD4722EEF1580026106F /* UserService.swift in Sources */,
 				07BFBD3F22EEF09B0026106F /* IssuesViewPresenter.swift in Sources */,
 				07BFBD4522EEF14B0026106F /* IssuesStorageService.swift in Sources */,
+				0752A4AA22EF219000A7D5CD /* Constants.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
