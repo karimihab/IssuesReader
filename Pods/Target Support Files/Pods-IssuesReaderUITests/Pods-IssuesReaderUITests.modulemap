@@ -1,6 +1,0 @@
-framework module Pods_IssuesReaderUITests {
-  umbrella header "Pods-IssuesReaderUITests-umbrella.h"
-
-  export *
-  module * { export * }
-}
