@@ -8,29 +8,41 @@
 
 import Foundation
 
+typealias getUsersCallback = ([User]?) -> Void
+
 protocol UserServiceProtocol {
-	func getUsers() -> [User]?
+	func getUsers(callback: @escaping getUsersCallback)
 }
 
 class UserService: UserServiceProtocol {
-	
 	let userParser:UserParserProtocol?
 	
 	init(with parser:UserParserProtocol) {
 		userParser = parser
 	}
 	
-	func getUsers() -> [User]? {
-		guard let usersRows = userParser?.parseUsers() else {
-			print("UserService Error: Can't get users")
-			return nil
-		}
-		return createUsers(from: usersRows)
+	func getUsers(callback: @escaping getUsersCallback) {
+		userParser?.parseUsers(callback: { [weak self] usersRows in
+			guard let strongSelf = self,
+				let rows = usersRows else {
+					print("UserService Error: Can't get users")
+					callback(nil)
+					return
+			}
+			strongSelf.createUsers(from: rows) { users in
+				guard let usersList = users else {
+					callback(nil)
+					return
+				}
+				callback(usersList)
+				return
+			}
+		})
 	}
 	
-	func createUsers(from usersRows:usersRows) -> [User]? {
+	func createUsers(from usersRows:usersRows, callback: @escaping getUsersCallback) {
 		var users =  [User]()
-
+		
 		for user in usersRows {
 			guard let firstName = user[Constants.firstNameKey],
 				let surName = user[Constants.surNameKey],
@@ -41,7 +53,13 @@ class UserService: UserServiceProtocol {
 			}
 			users.append(User(firstName: firstName, surName: surName, birthDate: birthDate, issuesCount: issuesCount))
 		}
+		if users.count == 0 {
+			callback(nil)
+			return
+		} else {
+			callback(users)
+			return
+		}
 		
-		return users
 	}
 }

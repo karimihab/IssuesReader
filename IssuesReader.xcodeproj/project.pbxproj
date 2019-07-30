@@ -128,13 +128,13 @@
 		07345F5A22EB214A0026D898 /* IssuesReader */ = {
 			isa = PBXGroup;
 			children = (
-				0752A4AC22EF278900A7D5CD /* Parser */,
-				0752A4A822EF218100A7D5CD /* Constants */,
 				07BFBD3422EEE63E0026106F /* ViewController */,
 				07BFBD3322EEE6300026106F /* Presenter */,
 				07BFBD3522EEE6460026106F /* Service */,
+				0752A4AC22EF278900A7D5CD /* Parser */,
 				07BFBD3922EEEE8D0026106F /* Models */,
 				07BFBD3622EEE65F0026106F /* Resources */,
+				0752A4A822EF218100A7D5CD /* Constants */,
 				07345F5B22EB214A0026D898 /* AppDelegate.swift */,
 				07345F5F22EB214A0026D898 /* Main.storyboard */,
 				07345F6222EB214C0026D898 /* Assets.xcassets */,

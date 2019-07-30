@@ -25,10 +25,13 @@ class userViewPresenter: UserViewPresenterProtocol {
 	}
 	
 	func getUsers() {
-		guard let usersData = userService?.getUsers() else {
-			print("userViewPresenter Error: Can't get Users")
-			return
-		}
-		view?.loadUsers(users: usersData)
+		userService?.getUsers(callback: { [weak self] (users) in
+			guard let strongSelf = self,
+				let usersList = users else {
+					print("userViewPresenter Error: Can't get Users")
+					return
+			}
+			strongSelf.view?.loadUsers(users: usersList)
+		})
 	}
 }

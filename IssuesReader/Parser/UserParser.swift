@@ -10,24 +10,27 @@ import Foundation
 import SwiftCSV
 
 typealias usersRows = [[String:String]]
+typealias parseUserCallback = (usersRows?) -> Void
+
 
 protocol UserParserProtocol {
-	func parseUsers() -> usersRows?
+	func parseUsers(callback: @escaping parseUserCallback)
 }
 
 class UserParser: UserParserProtocol {
 
-	func parseUsers() -> usersRows? {
+	func parseUsers(callback: @escaping parseUserCallback){
 		do {
 			guard let csvFile = Bundle.main.path(forResource: Constants.issuesFileName,
 												 ofType: Constants.issuesFileType) else {
 													print("Error: Can't open file, file doesn't exist")
-													return nil
+													callback(nil)
+													return
 			}
 			
 			let content = try CSV(name: csvFile, loadColumns: true)
-			return content.namedRows
-			
+			callback(content.namedRows)
+			return
 		} catch let parseError as CSVParseError {
 			print(parseError.localizedDescription)
 			
@@ -35,6 +38,7 @@ class UserParser: UserParserProtocol {
 			print(err.localizedDescription)
 			
 		}
-		return nil
+		callback(nil)
+		return
 	}
 }
