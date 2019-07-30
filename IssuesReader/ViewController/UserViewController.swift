@@ -13,7 +13,7 @@ protocol UserViewProtocol: class {
 	func loadUsers(users: [User])
 }
 
-class UserViewController: UIViewController,  UserViewProtocol {
+class UserViewController: UIViewController, UserViewProtocol {
 	
 	@IBOutlet weak var userTableView: UITableView!
 	
@@ -33,7 +33,8 @@ class UserViewController: UIViewController,  UserViewProtocol {
 	func setPresenter() {
 		if presenter == nil {
 			let userParser = UserParser(withFile: Constants.issuesFileName)
-			let userService = UserService(with: userParser)
+			let storageService = UserStorageService()
+			let userService = UserService(with: userParser,andStorageService: storageService)
 			presenter = userViewPresenter(with: userService, and: self)
 		}
 	}

@@ -18,4 +18,6 @@ struct Constants {
 	static let issuesCountKey = "Issue count"
 	
 	static let userTableViewCellIdentifier = "userCell"
+	
+	static let usersLocalStorageKey = "users"
 }

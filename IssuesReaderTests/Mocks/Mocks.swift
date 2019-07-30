@@ -6,6 +6,8 @@
 //  Copyright © 2019 rabobank. All rights reserved.
 //
 
+import Foundation
+
 @testable import IssuesReader
 
 class  UserParserMock: UserParserProtocol {
@@ -66,5 +68,18 @@ class UserViewPresenterMock: UserViewPresenterProtocol {
 		getUsersisCalled = true
 	}
 	
+	
+}
+
+class MockUserDefaults : UserDefaults {
+	
+	convenience init() {
+		self.init(suiteName: "Mock User Defaults")!
+	}
+	
+	override init?(suiteName suitename: String?) {
+		UserDefaults().removePersistentDomain(forName: suitename!)
+		super.init(suiteName: suitename)
+	}
 	
 }

@@ -16,27 +16,51 @@ protocol UserServiceProtocol {
 
 class UserService: UserServiceProtocol {
 	let userParser:UserParserProtocol?
+	let userStorageService:UserStorageServiceProtocol?
 	
-	init(with parser:UserParserProtocol) {
+	init(with parser:UserParserProtocol, andStorageService service:UserStorageServiceProtocol) {
 		userParser = parser
+		userStorageService = service
 	}
 	
 	func getUsers(callback: @escaping getUsersCallback) {
-		userParser?.parseUsers(callback: { [weak self] usersRows in
-			guard let strongSelf = self,
-				let rows = usersRows else {
-					print("UserService Error: Can't get users")
-					callback(nil)
-					return
-			}
-			strongSelf.createUsers(from: rows) { users in
-				guard let usersList = users else {
-					callback(nil)
-					return
-				}
-				callback(usersList)
+		
+		userStorageService?.fetchUsers(callback: { [weak self] users in
+			
+			let strongSelf = self
+			
+			//1. User Doesn't exists locally, Need to parse it
+			if users == nil || users?.count == 0 {
+				strongSelf?.userParser?.parseUsers(callback: { (usersRows) in
+					//Parsing users failed
+					guard let strongSelf = self,
+						let rows = usersRows else {
+							print("UserService Error: Can't get users")
+							callback(nil)
+							return
+					}
+					//Parsing users succeeded
+					strongSelf.createUsers(from: rows) { users in
+						guard let usersList = users else {
+							callback(nil)
+							return
+						}
+						callback(usersList)
+						strongSelf.userStorageService?.storeUsers(users: usersList, callback: { (didStore) in
+							if didStore {
+								print("UserService: users list saved successfully")
+							} else {
+								print("UserService Error: failed to save users list")
+							}
+						})
+						return
+					}
+				})
+			} else { // User exists locally, just return it
+				callback(users)
 				return
 			}
+			
 		})
 	}
 	
