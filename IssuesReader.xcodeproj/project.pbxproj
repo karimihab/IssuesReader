@@ -12,16 +12,17 @@
 		07345F6122EB214A0026D898 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 07345F5F22EB214A0026D898 /* Main.storyboard */; };
 		07345F6322EB214C0026D898 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 07345F6222EB214C0026D898 /* Assets.xcassets */; };
 		07345F6622EB214C0026D898 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 07345F6422EB214C0026D898 /* LaunchScreen.storyboard */; };
-		07345F7122EB214C0026D898 /* IssuesViewControllerTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 07345F7022EB214C0026D898 /* IssuesViewControllerTests.swift */; };
 		0752A4A722EF1E7200A7D5CD /* issues.csv in Resources */ = {isa = PBXBuildFile; fileRef = 0752A4A622EF1E7200A7D5CD /* issues.csv */; };
 		0752A4AA22EF219000A7D5CD /* Constants.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0752A4A922EF219000A7D5CD /* Constants.swift */; };
 		0752A4AE22EF3E7D00A7D5CD /* UserTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0752A4AD22EF3E7D00A7D5CD /* UserTableViewCell.swift */; };
 		0752A4B422F0468100A7D5CD /* UserParserTest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0752A4B322F0468100A7D5CD /* UserParserTest.swift */; };
 		0752A4B622F0499800A7D5CD /* issues_test.csv in Resources */ = {isa = PBXBuildFile; fileRef = 0752A4B522F0499800A7D5CD /* issues_test.csv */; };
 		0752A4B822F0558C00A7D5CD /* UserServiceTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0752A4B722F0558C00A7D5CD /* UserServiceTests.swift */; };
+		0752A4BA22F0630200A7D5CD /* Mocks.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0752A4B922F0630200A7D5CD /* Mocks.swift */; };
+		0752A4BD22F068FA00A7D5CD /* UserViewControllerTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0752A4BC22F068FA00A7D5CD /* UserViewControllerTests.swift */; };
 		07BFBD3D22EEEEFE0026106F /* User.swift in Sources */ = {isa = PBXBuildFile; fileRef = 07BFBD3C22EEEEFE0026106F /* User.swift */; };
 		07BFBD3F22EEF09B0026106F /* UserViewPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 07BFBD3E22EEF09B0026106F /* UserViewPresenter.swift */; };
-		07BFBD4122EEF0CD0026106F /* IssuesViewPresenterTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 07BFBD4022EEF0CD0026106F /* IssuesViewPresenterTests.swift */; };
+		07BFBD4122EEF0CD0026106F /* UserViewPresenterTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 07BFBD4022EEF0CD0026106F /* UserViewPresenterTests.swift */; };
 		07BFBD4322EEF13F0026106F /* UserParser.swift in Sources */ = {isa = PBXBuildFile; fileRef = 07BFBD4222EEF13F0026106F /* UserParser.swift */; };
 		07BFBD4522EEF14B0026106F /* IssuesStorageService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 07BFBD4422EEF14B0026106F /* IssuesStorageService.swift */; };
 		07BFBD4722EEF1580026106F /* UserService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 07BFBD4622EEF1580026106F /* UserService.swift */; };
@@ -48,7 +49,6 @@
 		07345F6522EB214C0026D898 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		07345F6722EB214C0026D898 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		07345F6C22EB214C0026D898 /* IssuesReaderTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = IssuesReaderTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
-		07345F7022EB214C0026D898 /* IssuesViewControllerTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = IssuesViewControllerTests.swift; sourceTree = "<group>"; };
 		07345F7222EB214C0026D898 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		0752A4A622EF1E7200A7D5CD /* issues.csv */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = issues.csv; sourceTree = "<group>"; };
 		0752A4A922EF219000A7D5CD /* Constants.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Constants.swift; sourceTree = "<group>"; };
@@ -56,9 +56,11 @@
 		0752A4B322F0468100A7D5CD /* UserParserTest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserParserTest.swift; sourceTree = "<group>"; };
 		0752A4B522F0499800A7D5CD /* issues_test.csv */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = issues_test.csv; sourceTree = "<group>"; };
 		0752A4B722F0558C00A7D5CD /* UserServiceTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserServiceTests.swift; sourceTree = "<group>"; };
+		0752A4B922F0630200A7D5CD /* Mocks.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Mocks.swift; sourceTree = "<group>"; };
+		0752A4BC22F068FA00A7D5CD /* UserViewControllerTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserViewControllerTests.swift; sourceTree = "<group>"; };
 		07BFBD3C22EEEEFE0026106F /* User.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = User.swift; sourceTree = "<group>"; };
 		07BFBD3E22EEF09B0026106F /* UserViewPresenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserViewPresenter.swift; sourceTree = "<group>"; };
-		07BFBD4022EEF0CD0026106F /* IssuesViewPresenterTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = IssuesViewPresenterTests.swift; sourceTree = "<group>"; };
+		07BFBD4022EEF0CD0026106F /* UserViewPresenterTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserViewPresenterTests.swift; sourceTree = "<group>"; };
 		07BFBD4222EEF13F0026106F /* UserParser.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserParser.swift; sourceTree = "<group>"; };
 		07BFBD4422EEF14B0026106F /* IssuesStorageService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = IssuesStorageService.swift; sourceTree = "<group>"; };
 		07BFBD4622EEF1580026106F /* UserService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserService.swift; sourceTree = "<group>"; };
@@ -133,6 +135,7 @@
 		07345F6F22EB214C0026D898 /* IssuesReaderTests */ = {
 			isa = PBXGroup;
 			children = (
+				0752A4BB22F0633100A7D5CD /* Mocks */,
 				0752A4B022F0447900A7D5CD /* ViewController */,
 				0752A4B122F0448300A7D5CD /* Presenter */,
 				0752A4B222F0449900A7D5CD /* Praser */,
@@ -169,7 +172,7 @@
 		0752A4B022F0447900A7D5CD /* ViewController */ = {
 			isa = PBXGroup;
 			children = (
-				07345F7022EB214C0026D898 /* IssuesViewControllerTests.swift */,
+				0752A4BC22F068FA00A7D5CD /* UserViewControllerTests.swift */,
 			);
 			path = ViewController;
 			sourceTree = "<group>";
@@ -177,7 +180,7 @@
 		0752A4B122F0448300A7D5CD /* Presenter */ = {
 			isa = PBXGroup;
 			children = (
-				07BFBD4022EEF0CD0026106F /* IssuesViewPresenterTests.swift */,
+				07BFBD4022EEF0CD0026106F /* UserViewPresenterTests.swift */,
 			);
 			path = Presenter;
 			sourceTree = "<group>";
@@ -188,6 +191,14 @@
 				0752A4B322F0468100A7D5CD /* UserParserTest.swift */,
 			);
 			path = Praser;
+			sourceTree = "<group>";
+		};
+		0752A4BB22F0633100A7D5CD /* Mocks */ = {
+			isa = PBXGroup;
+			children = (
+				0752A4B922F0630200A7D5CD /* Mocks.swift */,
+			);
+			path = Mocks;
 			sourceTree = "<group>";
 		};
 		07BFBD3322EEE6300026106F /* Presenter */ = {
@@ -471,9 +482,10 @@
 			buildActionMask = 2147483647;
 			files = (
 				0752A4B822F0558C00A7D5CD /* UserServiceTests.swift in Sources */,
+				0752A4BD22F068FA00A7D5CD /* UserViewControllerTests.swift in Sources */,
 				0752A4B422F0468100A7D5CD /* UserParserTest.swift in Sources */,
-				07345F7122EB214C0026D898 /* IssuesViewControllerTests.swift in Sources */,
-				07BFBD4122EEF0CD0026106F /* IssuesViewPresenterTests.swift in Sources */,
+				07BFBD4122EEF0CD0026106F /* UserViewPresenterTests.swift in Sources */,
+				0752A4BA22F0630200A7D5CD /* Mocks.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

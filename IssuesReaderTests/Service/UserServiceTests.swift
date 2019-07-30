@@ -39,7 +39,7 @@ class UserServiceTest: QuickSpec {
 				}
 			}
 			
-			fit("correctly creates users list") {
+			it("correctly creates users list") {
 				userParser.parseUserShouldFail = false
 				let userRow = [Constants.firstNameKey:"Karim",
 							   Constants.surNameKey: "Badawy",
@@ -63,27 +63,5 @@ class UserServiceTest: QuickSpec {
 
 			
 		}
-	}
-}
-
-class  UserParserMock: UserParserProtocol {
-	
-	var userRowsStub = [[String:String]]()
-	
-	var parseUsersCalled = false
-	var parseUserShouldFail = false
-	
-	func parseUsers(callback: @escaping parseUserCallback) {
-		parseUsersCalled = true
-		if parseUserShouldFail {
-			callback(nil)
-			return
-		} else {
-			callback(userRowsStub)
-			return
-			
-		}
-		
-		
 	}
 }
