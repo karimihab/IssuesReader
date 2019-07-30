@@ -19,9 +19,15 @@ protocol UserParserProtocol {
 
 class UserParser: UserParserProtocol {
 
+	var fileName = ""
+	
+	init(withFile file: String) {
+		fileName = file
+	}
+	
 	func parseUsers(callback: @escaping parseUserCallback){
 		do {
-			guard let csvFile = Bundle.main.path(forResource: Constants.issuesFileName,
+			guard let csvFile = Bundle.main.path(forResource: fileName,
 												 ofType: Constants.issuesFileType) else {
 													print("Error: Can't open file, file doesn't exist")
 													callback(nil)

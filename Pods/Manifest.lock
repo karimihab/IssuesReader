@@ -1,16 +1,24 @@
 PODS:
+  - Nimble (8.0.2)
+  - Quick (2.1.0)
   - SwiftCSV (0.5.1)
 
 DEPENDENCIES:
+  - Nimble
+  - Quick
   - SwiftCSV
 
 SPEC REPOS:
   https://github.com/cocoapods/specs.git:
+    - Nimble
+    - Quick
     - SwiftCSV
 
 SPEC CHECKSUMS:
+  Nimble: 622629381bda1dd5678162f21f1368cec7cbba60
+  Quick: 4be43f6634acfa727dd106bdf3929ce125ffa79d
   SwiftCSV: bc6269088ad2927f93750658c85b4a09f27529a9
 
-PODFILE CHECKSUM: b7a1b3c76b1b714987946d426d84a5cf414f00e5
+PODFILE CHECKSUM: c12841adb70e435f246ab4a71399d80cbf843008
 
 COCOAPODS: 1.6.1

@@ -32,7 +32,7 @@ class UserViewController: UIViewController,  UserViewProtocol {
 	
 	func setPresenter() {
 		if presenter == nil {
-			let userParser = UserParser()
+			let userParser = UserParser(withFile: Constants.issuesFileName)
 			let userService = UserService(with: userParser)
 			presenter = userViewPresenter(with: userService, and: self)
 		}
