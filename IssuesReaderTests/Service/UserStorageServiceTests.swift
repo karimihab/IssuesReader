@@ -36,6 +36,9 @@ class UserStorageServiceTest: QuickSpec {
 				waitUntil { done in
 					sut.fetchUsers(callback: { (users) in
 						expect(users?.count).to(equal(1))
+						expect(users?.first?.issuesCount).to(equal("100"))
+						expect(users?.first?.firstName).to(equal("Karim"))
+						expect(users?.first?.surName).to(equal("Ihab"))
 						done()
 					})
 				}

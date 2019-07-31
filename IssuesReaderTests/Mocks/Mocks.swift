@@ -83,3 +83,35 @@ class MockUserDefaults : UserDefaults {
 	}
 	
 }
+
+class userStorageServiceMock: UserStorageServiceProtocol {
+	
+	var fetchUsersShouldFail = false
+	var storeUsersShoudlFail = false
+	
+	var fetchUsersIsCalled = false
+	var storeUsersIsCalled = false
+	
+	let usersListStub = [User(firstName: "Karim", surName: "Ihab", birthDate: "1-2-4", issuesCount: "100")]
+	
+	func fetchUsers(callback: @escaping fetchUsersCallback) {
+		fetchUsersIsCalled = true
+		if fetchUsersShouldFail {
+			callback(nil)
+		} else {
+			callback(usersListStub)
+		}
+	}
+	
+	func storeUsers(users: [User], callback: @escaping storeUsersCallback) {
+		storeUsersIsCalled = true
+		if storeUsersShoudlFail {
+			callback(false)
+		} else {
+			callback(true)
+		}
+		
+	}
+	
+	
+}
