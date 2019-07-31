@@ -45,6 +45,14 @@ class UserViewController: UIViewController, UserViewProtocol {
 	}
 }
 
+
+extension UserViewController: UITableViewDelegate {
+	
+	func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
+		return 48;
+	}
+}
+
 extension UserViewController: UITableViewDataSource {
 	
 	func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {

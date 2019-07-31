@@ -22,6 +22,7 @@
 		0752A4BD22F068FA00A7D5CD /* UserViewControllerTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0752A4BC22F068FA00A7D5CD /* UserViewControllerTests.swift */; };
 		0752A4BF22F0943200A7D5CD /* UserStorageServiceTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0752A4BE22F0943200A7D5CD /* UserStorageServiceTests.swift */; };
 		0752A4C222F1836800A7D5CD /* AlertUtility.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0752A4C122F1836800A7D5CD /* AlertUtility.swift */; };
+		0752A4C422F18FCC00A7D5CD /* DateUtility.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0752A4C322F18FCC00A7D5CD /* DateUtility.swift */; };
 		07BFBD3D22EEEEFE0026106F /* User.swift in Sources */ = {isa = PBXBuildFile; fileRef = 07BFBD3C22EEEEFE0026106F /* User.swift */; };
 		07BFBD3F22EEF09B0026106F /* UserViewPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 07BFBD3E22EEF09B0026106F /* UserViewPresenter.swift */; };
 		07BFBD4122EEF0CD0026106F /* UserViewPresenterTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 07BFBD4022EEF0CD0026106F /* UserViewPresenterTests.swift */; };
@@ -62,6 +63,7 @@
 		0752A4BC22F068FA00A7D5CD /* UserViewControllerTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserViewControllerTests.swift; sourceTree = "<group>"; };
 		0752A4BE22F0943200A7D5CD /* UserStorageServiceTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserStorageServiceTests.swift; sourceTree = "<group>"; };
 		0752A4C122F1836800A7D5CD /* AlertUtility.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AlertUtility.swift; sourceTree = "<group>"; };
+		0752A4C322F18FCC00A7D5CD /* DateUtility.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DateUtility.swift; sourceTree = "<group>"; };
 		07BFBD3C22EEEEFE0026106F /* User.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = User.swift; sourceTree = "<group>"; };
 		07BFBD3E22EEF09B0026106F /* UserViewPresenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserViewPresenter.swift; sourceTree = "<group>"; };
 		07BFBD4022EEF0CD0026106F /* UserViewPresenterTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserViewPresenterTests.swift; sourceTree = "<group>"; };
@@ -211,6 +213,7 @@
 			isa = PBXGroup;
 			children = (
 				0752A4C122F1836800A7D5CD /* AlertUtility.swift */,
+				0752A4C322F18FCC00A7D5CD /* DateUtility.swift */,
 			);
 			path = Utilities;
 			sourceTree = "<group>";
@@ -481,6 +484,7 @@
 			files = (
 				07345F5E22EB214A0026D898 /* UserViewController.swift in Sources */,
 				0752A4AE22EF3E7D00A7D5CD /* UserTableViewCell.swift in Sources */,
+				0752A4C422F18FCC00A7D5CD /* DateUtility.swift in Sources */,
 				07345F5C22EB214A0026D898 /* AppDelegate.swift in Sources */,
 				07BFBD3D22EEEEFE0026106F /* User.swift in Sources */,
 				07BFBD4322EEF13F0026106F /* UserParser.swift in Sources */,

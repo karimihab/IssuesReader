@@ -17,9 +17,9 @@ class UserTableViewCell: UITableViewCell {
 	@IBOutlet weak var issuesCountLabel: UILabel!
 	
 	func fillCell(user: User) {
-		surNameLabel.text = user.surName
+		surNameLabel.text = "\(user.surName),"
 		firstNameLabel.text = user.firstName
-		dateOfBirthLabel.text = user.birthDate
+		dateOfBirthLabel.text = DateUtility.formatDate(dateString: user.birthDate)
 		issuesCountLabel.text = user.issuesCount
 	}
 }
