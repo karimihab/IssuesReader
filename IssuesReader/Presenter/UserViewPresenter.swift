@@ -16,12 +16,12 @@ protocol UserViewPresenterProtocol {
 	func getUsers()
 }
 
-class userViewPresenter: UserViewPresenterProtocol {
+class UserViewPresenter: UserViewPresenterProtocol {
 	
 	var userService: UserServiceProtocol?
 	weak var view: UserViewProtocol?
 	
-	init(with userService: UserServiceProtocol, and view:UserViewProtocol) {
+	init(with userService: UserServiceProtocol, and view: UserViewProtocol) {
 		self.userService = userService
 		self.view = view
 	}

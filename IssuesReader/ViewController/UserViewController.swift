@@ -6,8 +6,8 @@
 //  Copyright © 2019 rabobank. All rights reserved.
 //
 
-import UIKit
 import SwiftCSV
+import UIKit
 
 protocol UserViewProtocol: class {
 	func loadUsers(users: [User])
@@ -34,8 +34,8 @@ class UserViewController: UIViewController, UserViewProtocol {
 		if presenter == nil {
 			let userParser = UserParser(withFile: Constants.issuesFileName)
 			let storageService = UserStorageService()
-			let userService = UserService(with: userParser,andStorageService: storageService)
-			presenter = userViewPresenter(with: userService, and: self)
+			let userService = UserService(with: userParser, andStorageService: storageService)
+			presenter = UserViewPresenter(with: userService, and: self)
 		}
 	}
 	
@@ -45,11 +45,10 @@ class UserViewController: UIViewController, UserViewProtocol {
 	}
 }
 
-
 extension UserViewController: UITableViewDelegate {
 	
 	func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
-		return 48;
+		return 48
 	}
 }
 

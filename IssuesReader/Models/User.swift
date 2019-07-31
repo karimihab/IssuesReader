@@ -8,7 +8,7 @@
 
 import Foundation
 
-class User:NSObject, NSCoding {
+class User: NSObject, NSCoding {
 	var firstName: String
 	var surName: String
 	var birthDate: String
@@ -22,10 +22,14 @@ class User:NSObject, NSCoding {
 	}
 	
 	required convenience init(coder aDecoder: NSCoder) {
-		let firstName = aDecoder.decodeObject(forKey: "firstName") as! String
-		let surName = aDecoder.decodeObject(forKey: "surName") as! String
-		let birthDate = aDecoder.decodeObject(forKey: "birthDate") as! String
-		let issuesCount = aDecoder.decodeObject(forKey: "issuesCount") as! String
+		guard let firstName = aDecoder.decodeObject(forKey: "firstName") as? String,
+		let surName = aDecoder.decodeObject(forKey: "surName") as? String,
+		let birthDate = aDecoder.decodeObject(forKey: "birthDate") as? String,
+			let issuesCount = aDecoder.decodeObject(forKey: "issuesCount") as? String else {
+				self.init(firstName: "", surName: "", birthDate: "", issuesCount: "")
+				print("User Error: Couldn't decode User Object")
+				return
+		}
 		self.init(firstName: firstName, surName: surName, birthDate: birthDate, issuesCount: issuesCount)
 	}
 	
@@ -34,8 +38,5 @@ class User:NSObject, NSCoding {
 		aCoder.encode(surName, forKey: "surName")
 		aCoder.encode(birthDate, forKey: "birthDate")
 		aCoder.encode(issuesCount, forKey: "issuesCount")
-	}
-	
-	
-	
+	}	
 }

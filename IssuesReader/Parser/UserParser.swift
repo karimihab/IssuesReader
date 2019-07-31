@@ -9,12 +9,11 @@
 import Foundation
 import SwiftCSV
 
-typealias usersRows = [[String:String]]
-typealias parseUserCallback = (usersRows?) -> Void
-
+typealias UsersRows = [[String: String]]
+typealias ParseUserCallback = (UsersRows?) -> Void
 
 protocol UserParserProtocol {
-	func parseUsers(callback: @escaping parseUserCallback)
+	func parseUsers(callback: @escaping ParseUserCallback)
 }
 
 class UserParser: UserParserProtocol {
@@ -25,7 +24,7 @@ class UserParser: UserParserProtocol {
 		fileName = file
 	}
 	
-	func parseUsers(callback: @escaping parseUserCallback){
+	func parseUsers(callback: @escaping ParseUserCallback) {
 		do {
 			guard let csvFile = Bundle.main.path(forResource: fileName,
 												 ofType: Constants.issuesFileType) else {
@@ -40,7 +39,7 @@ class UserParser: UserParserProtocol {
 		} catch let parseError as CSVParseError {
 			print(parseError.localizedDescription)
 			
-		} catch let err{
+		} catch let err {
 			print(err.localizedDescription)
 			
 		}

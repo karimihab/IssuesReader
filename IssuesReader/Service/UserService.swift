@@ -8,29 +8,29 @@
 
 import Foundation
 
-typealias getUsersCallback = ([User]?) -> Void
+typealias GetUsersCallback = ([User]?) -> Void
 
 protocol UserServiceProtocol {
-	func getUsers(callback: @escaping getUsersCallback)
+	func getUsers(callback: @escaping GetUsersCallback)
 }
 
 class UserService: UserServiceProtocol {
-	let userParser:UserParserProtocol?
-	let userStorageService:UserStorageServiceProtocol?
+	let userParser: UserParserProtocol?
+	let userStorageService: UserStorageServiceProtocol?
 	
-	init(with parser:UserParserProtocol, andStorageService service:UserStorageServiceProtocol) {
+	init(with parser: UserParserProtocol, andStorageService service: UserStorageServiceProtocol) {
 		userParser = parser
 		userStorageService = service
 	}
 	
-	func getUsers(callback: @escaping getUsersCallback) {
+	func getUsers(callback: @escaping GetUsersCallback) {
 		userStorageService?.fetchUsers(callback: { [weak self] users in
 			
 			let strongSelf = self
 			
 			//1. User Doesn't exists locally, Need to parse it
 			if users == nil || users?.count == 0 {
-				strongSelf?.userParser?.parseUsers(callback: { (usersRows) in
+				strongSelf?.userParser?.parseUsers(callback: { usersRows in
 					//Parsing users failed
 					guard let strongSelf = self,
 						let rows = usersRows else {
@@ -45,7 +45,7 @@ class UserService: UserServiceProtocol {
 							return
 						}
 						callback(usersList)
-						strongSelf.userStorageService?.storeUsers(users: usersList, callback: { (didStore) in
+						strongSelf.userStorageService?.storeUsers(users: usersList, callback: { didStore in
 							if didStore {
 								print("UserService: users list saved successfully")
 							} else {
@@ -63,7 +63,7 @@ class UserService: UserServiceProtocol {
 		})
 	}
 	
-	func createUsers(from usersRows:usersRows, callback: @escaping getUsersCallback) {
+	func createUsers(from usersRows: UsersRows, callback: @escaping GetUsersCallback) {
 		var users =  [User]()
 		
 		for user in usersRows {
@@ -76,7 +76,7 @@ class UserService: UserServiceProtocol {
 			}
 			users.append(User(firstName: firstName, surName: surName, birthDate: birthDate, issuesCount: issuesCount))
 		}
-		if users.count == 0 {
+		if users.isEmpty {
 			callback(nil)
 			return
 		} else {

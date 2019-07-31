@@ -30,7 +30,7 @@ extension UIAlertController {
 				let selectedVC = tabVC.selectedViewController {
 				presentFromController(controller: selectedVC, animated: animated, completion: completion)
 			} else {
-				controller.present(self, animated: animated, completion: completion);
+				controller.present(self, animated: animated, completion: completion)
 		}
 	}
 }

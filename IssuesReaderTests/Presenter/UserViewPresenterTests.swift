@@ -18,26 +18,26 @@ class UserViewPresenterTest: QuickSpec {
 			
 			let userView = UserViewMock()
 			var userService: UserServiceMock!
-			var sut: userViewPresenter!
+			var sut: UserViewPresenter!
 
 			it("doesn't calls loadUsers on the view in case of failure") {
 				userService = UserServiceMock()
 				userService.getUsersShouldFail = true
-				sut = userViewPresenter(with: userService, and: userView)
+				sut = UserViewPresenter(with: userService, and: userView)
 				sut.getUsers()
 				expect(userView.loadUsersIsCalled).toEventually(beFalse())
 			}
 
 			it("calls getUsers on userService when its own getUsers is called") {
 				userService = UserServiceMock()
-				sut = userViewPresenter(with: userService, and: userView)
+				sut = UserViewPresenter(with: userService, and: userView)
 				sut.getUsers()
 				expect(userService.getUsersIsCalled).toEventually(beTrue())
 			}
 
 			it("calls loadUsers on the view in case of success") {
 				userService = UserServiceMock()
-				sut = userViewPresenter(with: userService, and: userView)
+				sut = UserViewPresenter(with: userService, and: userView)
 				sut.getUsers()
 				expect(userView.loadUsersIsCalled).toEventually(beTrue())
 			}

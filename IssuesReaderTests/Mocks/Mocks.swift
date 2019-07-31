@@ -16,7 +16,7 @@ class  UserParserMock: UserParserProtocol {
 	var parseUsersCalled = false
 	var parseUserShouldFail = false
 	
-	func parseUsers(callback: @escaping parseUserCallback) {
+	func parseUsers(callback: @escaping ParseUserCallback) {
 		parseUsersCalled = true
 		if parseUserShouldFail {
 			callback(nil)
@@ -35,7 +35,7 @@ class UserServiceMock: UserServiceProtocol {
 	var getUsersIsCalled = false
 	var getUsersShouldFail = false
 	
-	func getUsers(callback: @escaping getUsersCallback) {
+	func getUsers(callback: @escaping GetUsersCallback) {
 		getUsersIsCalled = true
 		if getUsersShouldFail {
 			callback(nil)
@@ -94,7 +94,7 @@ class userStorageServiceMock: UserStorageServiceProtocol {
 	
 	let usersListStub = [User(firstName: "Karim", surName: "Ihab", birthDate: "1-2-4", issuesCount: "100")]
 	
-	func fetchUsers(callback: @escaping fetchUsersCallback) {
+	func fetchUsers(callback: @escaping FetchUsersCallback) {
 		fetchUsersIsCalled = true
 		if fetchUsersShouldFail {
 			callback(nil)
@@ -103,7 +103,7 @@ class userStorageServiceMock: UserStorageServiceProtocol {
 		}
 	}
 	
-	func storeUsers(users: [User], callback: @escaping storeUsersCallback) {
+	func storeUsers(users: [User], callback: @escaping StoreUsersCallback) {
 		storeUsersIsCalled = true
 		if storeUsersShoudlFail {
 			callback(false)

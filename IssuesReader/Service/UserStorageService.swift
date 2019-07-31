@@ -8,26 +8,26 @@
 
 import Foundation
 
-typealias fetchUsersCallback = ([User]?) -> Void
-typealias storeUsersCallback = (Bool) -> Void
+typealias FetchUsersCallback = ([User]?) -> Void
+typealias StoreUsersCallback = (Bool) -> Void
 
 protocol UserStorageServiceProtocol {
-	func fetchUsers(callback: @escaping fetchUsersCallback)
-	func storeUsers(users: [User], callback: @escaping storeUsersCallback)
+	func fetchUsers(callback: @escaping FetchUsersCallback)
+	func storeUsers(users: [User], callback: @escaping StoreUsersCallback)
 }
 
 class UserStorageService: UserStorageServiceProtocol {
 	
-	var userDefaults:UserDefaults?
+	var userDefaults: UserDefaults?
 	
 	init(withDefaults defaults: UserDefaults = UserDefaults.standard) {
 		self.userDefaults = defaults
 	}
 	
-	func fetchUsers(callback: @escaping fetchUsersCallback) {
+	func fetchUsers(callback: @escaping FetchUsersCallback) {
 		var decodedUsers: [User]?
 		do {
-			guard let decoded  = userDefaults?.data(forKey: Constants.usersLocalStorageKey) else {
+			guard let decoded = userDefaults?.data(forKey: Constants.usersLocalStorageKey) else {
 				callback(nil)
 				return
 			}
@@ -42,8 +42,8 @@ class UserStorageService: UserStorageServiceProtocol {
 		return
 	}
 	
-	func storeUsers(users: [User], callback: @escaping storeUsersCallback){
-		let encodedData:Data?
+	func storeUsers(users: [User], callback: @escaping StoreUsersCallback) {
+		let encodedData: Data?
 		do {
 			encodedData = try NSKeyedArchiver.archivedData(withRootObject: users, requiringSecureCoding: false)
 			userDefaults?.set(encodedData, forKey: Constants.usersLocalStorageKey)
