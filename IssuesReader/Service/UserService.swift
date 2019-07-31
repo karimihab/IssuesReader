@@ -24,7 +24,6 @@ class UserService: UserServiceProtocol {
 	}
 	
 	func getUsers(callback: @escaping getUsersCallback) {
-		
 		userStorageService?.fetchUsers(callback: { [weak self] users in
 			
 			let strongSelf = self

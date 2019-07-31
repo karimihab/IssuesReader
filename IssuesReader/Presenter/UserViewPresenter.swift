@@ -7,6 +7,7 @@
 //
 
 import Foundation
+import UIKit
 
 protocol UserViewPresenterProtocol {
 	var userService: UserServiceProtocol? { get }
@@ -16,6 +17,7 @@ protocol UserViewPresenterProtocol {
 }
 
 class userViewPresenter: UserViewPresenterProtocol {
+	
 	var userService: UserServiceProtocol?
 	weak var view: UserViewProtocol?
 	
@@ -25,13 +27,23 @@ class userViewPresenter: UserViewPresenterProtocol {
 	}
 	
 	func getUsers() {
-		userService?.getUsers(callback: { [weak self] (users) in
-			guard let strongSelf = self,
-				let usersList = users else {
-					print("userViewPresenter Error: Can't get Users")
+		
+		//Running get user on a diff thread.
+		DispatchQueue.global(qos: .background).async { [weak self] in
+			guard let strongSelf = self else { return }
+			strongSelf.userService?.getUsers(callback: { users in
+				guard let usersList = users else {
+					DispatchQueue.main.async {
+						UIAlertController(title: "Error", message: "Can't get Users", preferredStyle: .alert).show()
+					}
 					return
-			}
-			strongSelf.view?.loadUsers(users: usersList)
-		})
+				}
+				
+				//loading users back on the main thread
+				DispatchQueue.main.async {
+					strongSelf.view?.loadUsers(users: usersList)
+				}
+			})
+		}
 	}
 }
